@@ -1,0 +1,2 @@
+# SekwencjaPamieci
+# SekwencjaPamieci
