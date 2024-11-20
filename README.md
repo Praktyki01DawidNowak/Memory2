@@ -1,2 +1,3 @@
 # SekwencjaPamieci
 # SekwencjaPamieci
+# Sekwencja
