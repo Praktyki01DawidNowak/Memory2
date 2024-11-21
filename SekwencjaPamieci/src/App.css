@@ -1,0 +1,156 @@
+/* Ustawienia globalne */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Wysokość całego okna */
+  background-color: #f0f0f0; /* Tło całej strony */
+}
+
+/* Ekran startowy */
+.start-screen {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.start-screen h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.start-screen button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 32px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-screen button:hover {
+  background-color: #45a049;
+}
+
+/* Ekran gry */
+.game-board {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.game-board h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+.colors button {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.colors button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.colors button:hover {
+  transform: scale(1.1);
+}
+
+.sequence-display div {
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.round-info {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.game-over {
+  font-size: 24px;
+  color: red;
+  margin-top: 20px;
+}
+
+/* Ekran wyników */
+.result-screen {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.result-screen h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.result-screen p {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.result-screen .restart-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 32px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.result-screen .restart-button:hover {
+  background-color: #45a049;
+}
+
+/* Sekcja do wyświetlania generowanej sekwencji */
+.sequence-display {
+  margin: 20px 0;
+}
+
+.color-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.color-box {
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.5s ease, opacity 0.5s ease; /* Dodajemy animację na opacity */
+}
+
+body {
+  background-color: pink;
+}
