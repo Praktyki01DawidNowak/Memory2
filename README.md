@@ -2,3 +2,4 @@
 # SekwencjaPamieci
 # Sekwencja
 # Sekwencja
+# Sekwencja
