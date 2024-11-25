@@ -1,25 +1,23 @@
 import { useState } from "react";
 import GameBoard from "./GameBoard";
 import ResultScreen from "./ResultScreen";
-import "./App.css"; // upewnij się, że plik CSS jest zaimportowany
+import "./App.css";
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
 
-  // Rozpoczęcie gry
   const startGame = () => {
     setGameStarted(true);
-    setGameOver(false); // Resetowanie stanu gry
-    setScore(0); // Resetowanie wyniku
+    setGameOver(false);
+    setScore(0);
   };
 
-  // Funkcja kończąca grę (wywoływana, gdy gra się skończy)
   const endGame = (finalScore) => {
     setGameStarted(false);
     setGameOver(true);
-    setScore(finalScore); // Ustawienie końcowego wyniku
+    setScore(finalScore);
   };
 
   return (
@@ -31,7 +29,7 @@ function App() {
         </div>
       )}
 
-      {gameStarted && !gameOver && <GameBoard onGameOver={endGame} />}
+      {gameStarted && <GameBoard onGameOver={endGame} />}
 
       {gameOver && <ResultScreen score={score} onRestart={startGame} />}
     </div>

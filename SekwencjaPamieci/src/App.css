@@ -1,156 +1,183 @@
-/* Ustawienia globalne */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Wysokość całego okna */
-  background-color: #f0f0f0; /* Tło całej strony */
+  height: 100vh;
+  background: linear-gradient(135deg, #6e7cfc, #a8b3f0);
 }
 
-/* Ekran startowy */
 .start-screen {
   text-align: center;
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
   width: 100%;
 }
 
 .start-screen h1 {
-  font-size: 36px;
+  font-size: 40px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .start-screen button {
   background-color: #4caf50;
   color: white;
-  padding: 15px 32px;
-  font-size: 18px;
+  padding: 18px 50px;
+  font-size: 22px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .start-screen button:hover {
   background-color: #45a049;
+  transform: translateY(-2px);
 }
 
-/* Ekran gry */
 .game-board {
   text-align: center;
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  background: #ffffff;
+  padding: 80px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
   width: 100%;
 }
 
 .game-board h2 {
-  font-size: 28px;
+  font-size: 34px;
   color: #333;
+  font-weight: 500;
+  margin-bottom: 40px;
 }
 
 .colors button {
-  width: 80px;
-  height: 80px;
-  margin: 10px;
+  width: 100px;
+  height: 100px;
+  margin: 15px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .colors button:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.colors button:hover {
+.colors button:hover:not(:disabled) {
   transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sequence-display {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
 }
 
 .sequence-display div {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
 .round-info {
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: 24px;
+  color: #444;
+  margin-top: 30px;
+  font-weight: bold;
 }
 
 .game-over {
-  font-size: 24px;
+  font-size: 28px;
   color: red;
   margin-top: 20px;
 }
 
-/* Ekran wyników */
 .result-screen {
   text-align: center;
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
   width: 100%;
 }
 
 .result-screen h2 {
-  font-size: 36px;
+  font-size: 40px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .result-screen p {
   font-size: 24px;
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .result-screen .restart-button {
   background-color: #4caf50;
   color: white;
-  padding: 15px 32px;
-  font-size: 18px;
+  padding: 18px 50px;
+  font-size: 22px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .result-screen .restart-button:hover {
   background-color: #45a049;
+  transform: translateY(-2px);
 }
 
-/* Sekcja do wyświetlania generowanej sekwencji */
-.sequence-display {
-  margin: 20px 0;
+.color-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+  justify-items: center;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.color-sequence {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.color-buttons button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.color-box {
-  width: 50px;
-  height: 50px;
-  transition: background-color 0.5s ease, opacity 0.5s ease; /* Dodajemy animację na opacity */
+.color-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-body {
-  background-color: pink;
+.color-buttons button:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
