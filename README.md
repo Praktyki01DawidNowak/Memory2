@@ -3,3 +3,4 @@
 # Sekwencja
 # Sekwencja
 # Sekwencja
+# Memory
